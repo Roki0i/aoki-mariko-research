@@ -11,10 +11,10 @@
 - 出典: [BLS ATUS公開データ](https://www.bls.gov/tus/data.htm)
 - 個別の公式URL: [sources.csv](sources.csv)
 - 必要変数: Activity `TUCASEID, TEWHERE, TUACTDUR24` / Respondent `TUCASEID, TUFINLWGT`
-- Colabからは対象リポジトリに限定された認証トークンで読み込みます。
-- Colabシークレット `ATUS_GITHUB_TOKEN` に **Fine-grained PAT / Contents: Read-only / このリポジトリのみ**のトークンを保存し、ノートブックからのアクセスを許可します。トークンはGitHubに書かないでください。
-- `notebooks/02_atus.ipynb` は6件をGitHub APIから取得し、名前・サイズ・ZIP整合性・内部データ名を検証します。
-- GitHubアクセスに失敗した場合は原因とトークン設定手順を表示して停止し、BLS取得や手動アップロードには切り替わりません。
+- `notebooks/02_atus.ipynb` は公開GitHubのRaw URLからZIP6件を認証なしで自動取得します。トークン設定・手動アップロードは不要です。
+- ファイル名・サイズ・Git blobハッシュ・ZIP整合性・内部データ名を検証します。
+- GitHubアクセスに失敗した場合は原因を表示して停止し、BLS取得や手動アップロードには切り替わりません。
+- 元ZIPを変更した場合はノートブックの`EXPECTED_ZIPS`（サイズ・ハッシュ）も更新してください。
 - ZIPの配布内容・利用条件・更新状況はBLSで確認してください。元データを再公開する際は公開範囲にも注意してください。
 
 ### 研究上の注意

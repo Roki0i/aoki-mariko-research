@@ -17,7 +17,12 @@
 
 ## 実行
 
-Google ColabまたはPythonのJupyter環境を使用します。
+Google ColabまたはPythonのJupyter環境を使用します。ノートブックは公開GitHubから開けます。
+
+- [ATUS分析をColabで開く](https://colab.research.google.com/github/Roki0i/aoki-mariko-research/blob/main/notebooks/02_atus.ipynb)
+- ATUSの6つのZIPは公開GitHubから認証なしで自動取得します。トークンも手動アップロードも不要です。
+- Colab標準環境にはATUS分析で使う `numpy`、`pandas`、`matplotlib`、`requests`、`IPython` が通常含まれています。
+- ローカルで実行する場合は、次のコマンドで必要なライブラリを導入してください。パッケージ本体ではなく、依存関係を`requirements.txt`で管理しています。
 
 ```bash
 pip install -r requirements.txt
