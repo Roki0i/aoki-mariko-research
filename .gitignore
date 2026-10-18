@@ -1,0 +1,29 @@
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Secrets and local configuration
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+service-account*.json
+
+# Raw or private research data
+data/raw/
+atus_raw/
+atus_output/atus_person_day_selected.csv
+survey_responses/
+private/
+
+# Large archives and generated caches
+*.zip
+*.7z
+*.tar
+*.gz
+.DS_Store
+Thumbs.db
