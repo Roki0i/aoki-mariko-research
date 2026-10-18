@@ -10,7 +10,7 @@
 
 - 出典: [BLS ATUS公開データ](https://www.bls.gov/tus/data.htm)
 - 個別の公式URL: [sources.csv](sources.csv)
-- 必要変数: Activity `TUCASEID, TEWHERE, TUACTDUR24, TUACTIVITY_N` / Respondent `TUCASEID, TUFINLWGT`
+- 必要変数: Activity `TUCASEID, TEWHERE, TUACTDUR24` / Respondent `TUCASEID, TUFINLWGT`
 - GitHubリポジトリはPrivateのままにし、Colabからは限定された認証トークンで読み込みます。
 - Colabシークレット `ATUS_GITHUB_TOKEN` に **Fine-grained PAT / Contents: Read-only / このリポジトリのみ**のトークンを保存し、ノートブックからのアクセスを許可します。トークンはGitHubに書かないでください。
 - 必要ファイルがない場合、ノートブックはBLS取得、その後手動アップロードに切り替わります。
