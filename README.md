@@ -28,3 +28,12 @@ pip install -r requirements.txt
 - ATUSの元ZIP、個人日誌単位の加工データなど大容量・再取得可能なデータは含めていません。
 - 参照データと第三者資料の利用条件は各配布元に従ってください。
 - 本リポジトリの分析だけで青木まりこ現象の原因を特定することはできません。
+
+## ATUSのGitHub ZIP保管
+
+`data/atus/zips/` に2023–2025年の公式ZIPファイル6個を格納します。取得URL一覧は `data/atus/sources.csv` を参照してください。
+
+- 2023年の既存集計 `data/processed/atus_location_summary.csv` は**2023年のみ**。3年分の集計結果と混同しないでください。
+- ZIP未登録の段階では `data/atus/zips/.gitkeep` のみが存在します。ノートブックはGitHub取得ができなければBLS公式サイト、次にColabへの手動アップロードを試します。
+- GitHubのPrivateリポジトリをColabから読む場合は、Fine-grained Personal Access Token を**このリポジトリに限定し、Contents: Read-only**にして作成し、Colabシークレット `ATUS_GITHUB_TOKEN` に登録します。**トークンをノートブック、GitHub、出力ログへ記載しないでください**。
+- ZIPはBLS公表の公開研究データですが、ATUSは書店単独の分類や便意を記録していません。ATUSの元データを大きなCSVに展開してコミットする必要はありません。
