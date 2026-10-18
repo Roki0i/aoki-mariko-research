@@ -28,6 +28,6 @@ private/
 .DS_Store
 Thumbs.db
 
-# ATUS公式配布ZIPだけはPrivateリポジトリでバージョン管理を許可
+# ATUS公式配布ZIPだけは分析再現用にバージョン管理を許可
 !data/atus/zips/atusact-*.zip
 !data/atus/zips/atusresp-*.zip
