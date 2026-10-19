@@ -72,6 +72,10 @@ jupyter notebook
 
 3年統合の加重平均は、Library 89.14分（n=141）、Other store / mall 60.68分（n=3,860）、Grocery store 45.74分（n=3,534）、Restaurant / bar 66.22分（n=4,882）です。
 
+## 仮説と証拠の対応
+
+森永乳業（2024）・松田（2003）・ATUS（2023〜2025）の3資料の比較可能性、仮説H1〜H3への対応、未解決の研究課題を[仮説・証拠対応表](docs/notes/hypothesis_evidence_matrix.md)にまとめています。便意の原因や書店特有性を直接証明するものではありません。
+
 ## 研究上の制約
 
 ### ATUS
