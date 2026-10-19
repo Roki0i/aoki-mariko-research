@@ -16,7 +16,7 @@ service-account*.json
 # Raw or private research data
 data/raw/
 atus_raw/
-atus_output/atus_person_day_selected.csv
+data/processed/atus/
 survey_responses/
 private/
 
