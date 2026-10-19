@@ -14,6 +14,7 @@
 - **分析①**：松田千春（2003）「情報探索におけるブラウジング行動：図書館と書店における行動観察を基にして」の表5–8から整理した40件。確認済みデータは [`data/processed/matsuda_40_data_checked.csv`](data/processed/matsuda_40_data_checked.csv) に保存しています。
 - **分析②**：米国労働統計局（BLS）の [American Time Use Survey](https://www.bls.gov/tus/data.htm) 2023–2025年公開利用ファイル。ActivityとRespondentの公式ZIP 6件を [`data/atus/zips/`](data/atus/zips/) に保存しています。取得元は [`data/atus/sources.csv`](data/atus/sources.csv) を参照してください。
 - **参考資料**：Google Trendsの書き出しデータと、文献・報道資料の整理表。これらは上記2分析の集計値には使用していません。
+- **検討中の公開調査**：森永乳業（2024）の[公表集計の確認メモ](docs/notes/morinaga_2024_survey_review.md)と[設問別集計CSV](data/processed/morinaga_2024_published_aggregates.csv)。同調査の集計を転記した参考資料で、元の個票データではありません。
 
 ## リポジトリ構成
 
