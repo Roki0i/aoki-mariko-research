@@ -18,6 +18,12 @@
 
 Google Trendsは**検索関心を示す背景資料**として利用します。便意の発生率や原因を示すデータではありません。
 
+### 過去の公表調査との照合
+
+2013年のサンリフレ調査、2015年のマイナビウーマンの2つのWeb調査も確認しました。報告された割合は2013年約23%、2015年2月26.7%・10〜11月16.4%です。2024年の森永乳業29.8%と合わせて、複数の調査で書店での経験が報告されていることが分かります。ただし**設問・対象集団・募集方法が違うため、経験率の増減や真の有病率を比較・推定することはできません**。2013年の23%は「便意をもよおすことが多い」回答で、同調査の尿意14%とは別の区分です。2013年調査全体の有効回答は2,459人ですが、当該設問の分母は確認できていません。
+
+詳しくは[調査比較メモ](docs/notes/bookstore_survey_comparison_2013_2024.md)と[比較用CSV](data/processed/bookstore_urge_surveys_2013_2024.csv)を参照してください。
+
 資料ごとの設問・指標の違いは[仮説と証拠の対応表](docs/notes/hypothesis_evidence_matrix.md)に整理しています。
 
 ## 主な結果
@@ -51,7 +57,7 @@ Notebook 01は `data/processed/matsuda_40_data_checked.csv` を使用します�
 | フォルダ | 内容 |
 | --- | --- |
 | `notebooks/` | 集計・作図コード |
-| `data/processed/` | 松田の40件データと森永乳業の公表集計 |
+| `data/processed/` | 松田の40件データ、各社の公表調査の比較表 |
 | `data/atus/` | ATUS公式ZIPと出典 |
 | `data/google_trends/` | Google Trendsの書き出しCSV |
 | `results/tables/`・`results/figures/` | 出力した表・図 |
