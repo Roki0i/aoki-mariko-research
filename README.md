@@ -1,62 +1,29 @@
 # 青木まりこ現象の公開データ分析
 
-「書店にいると便意を催す」といわれる青木まりこ現象について、**書店に特有なのか**を公開資料から検討する卒業研究です。原因を特定する研究ではなく、現在の資料で何が分かり、何が分からないかを整理します。
+書店で便意を催すといわれる「青木まりこ現象」の**書店特有性や関連要因**を、公開資料から探索する研究です。原因の特定は目的としていません。
 
-## 調べたいこと
+## 対象資料と主な結果
 
-1. 書店以外にも似たトイレ欲求の報告はあるか。
-2. 施設ごとの滞在・活動時間はどのように異なるか。
-3. お通じの悩みと書店での便意経験は関係しているか。
-
-## 使用した資料と作業
-
-| 資料 | 行ったこと | 主な制約 |
+| 資料 | 確認できたこと | 注意点 |
 | --- | --- | --- |
-| 森永乳業（2024）のインターネット調査・成人1,000人 | **公表集計を確認・整理**。個票を分析したわけではない | 書店の「便意」と他施設の「トイレ欲求」は設問が異なる |
-| 松田（2003）の書店・図書館観察40件 | 原論文の表5〜8をCSV化し、滞在時間を**再集計** | 便意は未測定、施設・人数が少ない |
-| 米国BLSのATUS（2023〜2025） | 公開個票から施設分類別の活動時間を**二次分析** | 書店を単独で識別できず、1訪問の滞在時間でもない |
+| 森永乳業（2024）の公表調査 | 書店での便意経験29.8%。お通じの悩みあり46.0%、なし19.2% | 異なる設問・未調整の関連。個票解析ではない |
+| 松田（2003）の観察40件 | 平均滞在時間：書店18.24分、図書館34.97分 | 各20件、便意は未測定。探索的検定p=0.273 |
+| 米国BLS ATUS（2023〜2025） | 公開個票から施設分類別の活動時間を再集計 | 書店を単独識別不可。1訪問の滞在時間ではない |
 
-Google Trendsは**検索関心を示す背景資料**として利用します。便意の発生率や原因を示すデータではありません。
+**現状では書店特有性・原因は判断できません。** Google Trendsは検索関心の背景資料で、便意の発生率ではありません。測定対象の異なる資料を単純に合算しません。
 
-資料ごとの設問・指標の違いは[仮説と証拠の対応表](docs/notes/hypothesis_evidence_matrix.md)に整理しています。
+[仮説と根拠](docs/notes/hypothesis_evidence_matrix.md) · [松田データの検証](docs/notes/aoki_dwell_analysis_report.md) · [ATUSの解釈](docs/notes/atus_colab_report_2023_2025.md)
 
-## 主な結果
+## 再現方法
 
-- 森永乳業の公表値：書店での便意経験は全体の **29.8%**。お通じの悩みあり **46.0%**（n=396）、なし **19.2%**（n=604）。後者は未調整の関連であり、原因の証明ではありません。
-- 松田の観察データ：図書館 **34.97分**（n=20）、書店 **18.24分**（n=20）の平均滞在時間。探索的Mann–Whitney U検定は **p=0.273**（施設内の非独立性は未考慮）。
-- ATUSの加重平均：図書館 **89.14分**（n=141）、その他店舗・モール **60.68分**（n=3,860）、スーパー **45.74分**（n=3,534）、飲食店・バー **66.22分**（n=4,882）。これは**該当分類に活動がある人の、日誌1日当たりの活動時間合計**です。
+- [Notebook 01：書店と図書館の滞在時間](https://colab.research.google.com/github/Roki0i/aoki-mariko-research/blob/main/notebooks/01_dwell_time.ipynb)
+- [Notebook 02：ATUSの活動時間](https://colab.research.google.com/github/Roki0i/aoki-mariko-research/blob/main/notebooks/02_atus.ipynb)
 
-現時点では、**書店特有性と滞在時間の影響は判定できません**。公表調査では、お通じの悩みの有無と書店での便意経験に関連が報告されています。
-
-## 分析を再現する
-
-Python 3.10以上を想定しています。Google Colabでは次のNotebookを開き、上から順に実行できます。
-
-- [01：書店と図書館の滞在時間](https://colab.research.google.com/github/Roki0i/aoki-mariko-research/blob/main/notebooks/01_dwell_time.ipynb)
-- [02：ATUSの施設別活動時間](https://colab.research.google.com/github/Roki0i/aoki-mariko-research/blob/main/notebooks/02_atus.ipynb)
-
-ローカルの場合：
+ローカル実行（Python 3.10以上）：
 
 ```bash
-git clone https://github.com/Roki0i/aoki-mariko-research.git
-cd aoki-mariko-research
 python -m pip install -r requirements.txt
 jupyter notebook
 ```
 
-Notebook 01は `data/processed/matsuda_40_data_checked.csv` を使用します。Colabでリポジトリのファイルがない場合は、公開GitHubから取得します。Notebook 02は `data/atus/zips/` 内の公式配布ZIP 6件を公開GitHubから取得し、ファイルの整合性を確認します。Google Driveマウントや認証情報は不要です。
-
-## ファイルの場所
-
-| フォルダ | 内容 |
-| --- | --- |
-| `notebooks/` | 集計・作図コード |
-| `data/processed/` | 松田の40件データと森永乳業の公表集計 |
-| `data/atus/` | ATUS公式ZIPと出典 |
-| `data/google_trends/` | Google Trendsの書き出しCSV |
-| `results/tables/`・`results/figures/` | 出力した表・図 |
-| `docs/notes/`・`docs/references/` | 分析の解釈、検証メモ、文献一覧 |
-
-詳細：[松田の分析メモ](docs/notes/aoki_dwell_analysis_report.md)／[ATUSの集計メモ](docs/notes/atus_colab_report_2023_2025.md)／[森永乳業の公表値確認](docs/notes/morinaga_2024_survey_review.md)
-
-**注意**：3資料は調査国・対象・測定指標が異なります。数値を単純に統合したり、便意の原因や書店特有性を証明したりすることはできません。
+入力は `data/`、分析コードは `notebooks/`、結果は `results/` にあります。研究メモ・出典は `docs/` を参照してください。
